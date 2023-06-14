@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+body {
+        background-image: url('/static/index-background.jpg');
+        background-size:cover;
+        background-repeat: no-repeat;
+    }
+
+h1,h3{
+    color:white;
+}
+a{
+    text-decoration: none;
+    color:solid black;
+}
+li{
+    display: flex;
+    height:30px;
+    width:400px;
+    background-color: white;
+    margin-bottom:30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+}
+a{
+    height:100%;
+    width:100%;
+}
+</style>
+<body>
+    <h1>IPL project</h1>
+    <h3> The Dataset of matches contains {{match}} records and deliveries contains {{delivery}} records</h3>
+    <ul>
+        <li><a href= "{% url 'matches-per-year' %}">Matches per year all years</a></li>
+        <li><a href="{% url 'won-per-year-per-team' %}">Matches won per team per year</a></li>
+        <li><a href="{% url 'extra-runs-conceded' %}">Extra Runs conceded in 2016</a></li>
+        <li><a href="{% url 'top-ten-economical-bowlers' %}">Top 10 economical bowlers in the year 2015</a></li>
+    </ul>
+    <h3>Charts:</h3>
+    <ul>
+        <li><a href="{% url 'match-per-year-chart' %}">Chart 1</a></li>
+        <li><a href="{% url 'won-per-year-per-team-chart' %}">Chart 2</a></li>
+        <li><a href="{% url 'extra-runs-conceded-chart' %}">Chart 3</a></li>
+        <li><a href="{% url 'top-ten-economical-bowlers-chart' %}">Chart 4</a></li>
+    </ul>
+</body>
+</html>
